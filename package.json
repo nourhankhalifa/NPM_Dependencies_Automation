@@ -1,0 +1,7 @@
+{
+    "name": "npm_dependencies_automation",
+    "version": "1.0.0",
+    "dependencies": {
+        "@nourhankhalifa/react-tiny-popover": "^8.1.2"
+    }
+}

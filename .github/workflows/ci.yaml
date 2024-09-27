@@ -1,0 +1,27 @@
+name: Install Dependencies
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  install-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.6.0
+          registry-url: https://npm.pkg.github.com/
+          scope: '@nourhankhalifa'
+          
+      - name: Install dependencies
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+          echo "//npm.pkg.github.com/:_authToken=\${NPM_TOKEN}" > .npmrc
+          npm install
+        env:
+          NPM_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
