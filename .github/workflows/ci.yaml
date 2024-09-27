@@ -21,6 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+          echo "//npm.pkg.github.com/:_authToken=\${NPM_TOKEN}" > .npmrc
           npm install
         env:
           NPM_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
