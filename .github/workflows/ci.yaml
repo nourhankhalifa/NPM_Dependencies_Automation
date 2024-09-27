@@ -3,7 +3,7 @@ name: Install Dependencies
 on:
   push:
     branches:
-      - dev
+      - main
 
 jobs:
   install-dependencies:
