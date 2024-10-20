@@ -21,12 +21,12 @@ The task was to simulate the development and automation process for an internal 
         - Building the library.
         - Publishing the package to **private** **GitHub Packages (GitHub secret needs to be added either to the repository or to the organization)**.
         - To add a GitHub secret to the repository got to Settings → Secrets and variables → Actions → New repository secret
-            
-            ![Screenshot 2024-09-27 at 8.00.11 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/bfaea251-05d7-46b2-a023-766af5b6ee7c/f6b57964-2826-480e-bfe9-c644cb1cd66f/Screenshot_2024-09-27_at_8.00.11_PM.png)
+            <img width="643" alt="Screenshot 2024-10-20 at 4 37 24 PM" src="https://github.com/user-attachments/assets/b3a31689-0026-4591-b819-b1fbd3177b3c">
+
             
         - After the pipeline execution a new version of the library will be published to the GitHub private packages
-            
-            ![Screenshot 2024-09-27 at 8.05.59 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/bfaea251-05d7-46b2-a023-766af5b6ee7c/199e5202-c0eb-47ab-9a51-1f2412e5bfe7/Screenshot_2024-09-27_at_8.05.59_PM.png)
+            <img width="643" alt="Screenshot 2024-10-20 at 4 38 06 PM" src="https://github.com/user-attachments/assets/c05b41ab-1edf-4d6f-8796-7298e3b61ad3">
+
             
     - Alternatives for package publishing include **JFrog Artifactory**, **npm**, or **Azure Artifacts**.
 4. **Automating Dependency Updates with Dependabot**:
@@ -38,27 +38,23 @@ The task was to simulate the development and automation process for an internal 
     
     - Created a new repository named **`NPM_Dependencies_Automation`**.
     - Configured the `.github/dependabot.yml` file for automatic dependency updates as follows:
-        
-        ![Screenshot 2024-09-27 at 8.14.21 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/bfaea251-05d7-46b2-a023-766af5b6ee7c/e8e32bc3-a873-412e-8f29-7417c7d22475/Screenshot_2024-09-27_at_8.14.21_PM.png)
+        <img width="669" alt="Screenshot 2024-10-20 at 4 38 54 PM" src="https://github.com/user-attachments/assets/034b9e4b-3759-41f1-a32f-eeeaea16d122">
         
         - configured the scan to run once each week; by default, this is on Monday. This can can also be configured to run daily or monthly.
         - Added the URL of my private registery.
         - Added the GitHub token to Dependabot secrets as follows:
             - from settings → Secrets and variables → Dependabot → New repository secret
-                
-                ![Screenshot 2024-09-27 at 8.19.40 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/bfaea251-05d7-46b2-a023-766af5b6ee7c/2a76dc91-e0a3-4f79-9d8f-cb3071b4055f/Screenshot_2024-09-27_at_8.19.40_PM.png)
+                <img width="617" alt="Screenshot 2024-10-20 at 4 39 16 PM" src="https://github.com/user-attachments/assets/52d256ba-9d12-4e66-9d8c-671dbe0643b9">
                 
     - Added a CI pipeline (NPM_Dependencies_Automation/.github/workflows/ci.yaml) to install dependencies, which includes the **`react-tiny-popover`** package published earlier.
-        
-        ![Screenshot 2024-09-27 at 8.25.43 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/bfaea251-05d7-46b2-a023-766af5b6ee7c/6ae4c2f7-facb-4ebe-929a-d6aec68e306f/Screenshot_2024-09-27_at_8.25.43_PM.png)
+        <img width="670" alt="Screenshot 2024-10-20 at 4 39 38 PM" src="https://github.com/user-attachments/assets/5fdfbd78-ad3a-4f14-ab77-02e7e1bf8954">
         
         package.json
-        
-        ![Screenshot 2024-09-27 at 8.27.42 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/bfaea251-05d7-46b2-a023-766af5b6ee7c/2cc49c4e-5df3-4e01-a1d7-5143c6c39ae4/Screenshot_2024-09-27_at_8.27.42_PM.png)
+        <img width="669" alt="Screenshot 2024-10-20 at 4 39 59 PM" src="https://github.com/user-attachments/assets/04b3968b-62f9-477f-b30b-b324e16132f0">
         
         - Added .npmrc to be able to install the @nourhankhalifa/react-tiny-popover package from the private GitHub packages.
-        
-        ![Screenshot 2024-09-27 at 8.30.55 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/bfaea251-05d7-46b2-a023-766af5b6ee7c/147bedcc-a998-4a7c-a6bc-da75ec8be40b/Screenshot_2024-09-27_at_8.30.55_PM.png)
+        <img width="670" alt="Screenshot 2024-10-20 at 4 40 20 PM" src="https://github.com/user-attachments/assets/f26faadc-9ffc-4685-84e7-be6c69b13868">
+
         
 
 ### GitHub Repositories
